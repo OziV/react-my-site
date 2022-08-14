@@ -1,14 +1,26 @@
 import React, { useState, useEffect } from "react";
 import uuid from "react-uuid";
 import { text_title } from "../data/dataText";
-import { GrProjects } from "react-icons/gr";
 import CardItem from "../card/CardItem";
-import DataList from "../data/DataList";
 import Loader from "../misc/Loader";
+import { GrProjects } from "react-icons/gr";
 
 function Projects() {
-  const [data, setData] = useState(DataList);
+  const [data, setData] = useState([]);
+  const [dataSorted, setDataSorted] = useState([]);
   const [loading, setLoading] = useState(true);
+
+  const fetchData = async () => {
+    try {
+      const response = await fetch(process.env.REACT_APP_PROJECTS_URL);
+      const newData = await response.json();
+      setData(newData);
+      setLoading(false);
+    } catch (e) {
+      setLoading(false);
+      throw new Error(e);
+    }
+  };
 
   // const dataSortByRating = () => {
   //   data.sort((a, b) => {
@@ -19,7 +31,8 @@ function Projects() {
   // };
 
   const dataShuffle = () => {
-    data.sort((a, b) => 0.5 - Math.random());
+    const randomSort = data.sort((a, b) => 0.5 - Math.random());
+    setDataSorted(randomSort);
     setLoading(false);
     return;
   };
@@ -46,9 +59,13 @@ function Projects() {
     if (loading) {
       return <Loader />;
     } else {
-      return <CardItem data={data} key={uuid()} />;
+      return <CardItem dataSorted={dataSorted} key={uuid()} />;
     }
   };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   useEffect(() => {
     dataShuffle();

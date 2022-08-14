@@ -23,8 +23,8 @@ import { FaVuejs } from "react-icons/fa";
 import { SiBootstrap } from "react-icons/si";
 import { SiMaterialui } from "react-icons/si";
 
-function CardItem({ data }) {
-  const [projectsList, setProjectsList] = useState(data);
+function CardItem({ dataSorted }) {
+  const [projectsList, setProjectsList] = useState(dataSorted);
 
   const checkSymbol = (technologies) => {
     const symbols = [];

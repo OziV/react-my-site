@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { text_title } from "../data/dataText";
 import CardItem from "../card/CardItem";
-import DataList from "../data/DataList";
 import Loader from "../misc/Loader";
 import { CgSandClock } from "react-icons/cg";
 
 function ProjectsTop() {
-  const [data, setData] = useState(DataList);
+  const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const GetTitle = () => {
