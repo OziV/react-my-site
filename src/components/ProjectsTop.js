@@ -1,22 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
+import { useTitle } from "../custom_hooks/useTitle";
 import { text_title } from "../data/dataText";
 import CardItem from "../card/CardItem";
 import Loader from "../misc/Loader";
 import { CgSandClock } from "react-icons/cg";
 
 function ProjectsTop() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-
-  const GetTitle = () => {
-    const title = text_title[1].name;
-    return (
-      <div>
-        <h1>{title}</h1>
-        <div className="underline"></div>
-      </div>
-    );
-  };
+  const { title } = useTitle(text_title[1].name);
 
   const GetIcon = () => {
     return (
@@ -36,7 +26,7 @@ function ProjectsTop() {
 
   return (
     <section className="section">
-      <GetTitle />
+      {title}
       <GetData />
       <GetIcon />
     </section>

@@ -1,17 +1,11 @@
 import React from "react";
+import { useTitle } from "../custom_hooks/useTitle";
 import { text_title, text_personal, text_data } from "../data/dataText";
 import { MdOutlineLaptopChromebook } from "react-icons/md";
 
 function Profile() {
-  const GetTitle = () => {
-    const title = text_title[0].name;
-    return (
-      <div>
-        <h1>{title}</h1>
-        <div className="underline"></div>
-      </div>
-    );
-  };
+  const { title } = useTitle(text_title[0].name);
+
   const GetText = () => {
     const text_i = text_data[0].info;
     const firstName = text_personal[0].info;
@@ -43,7 +37,7 @@ function Profile() {
 
   return (
     <section className="section section-top section-fix">
-      <GetTitle />
+      {title}
       <GetText />
     </section>
   );
