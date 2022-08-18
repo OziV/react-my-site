@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import axios from "axios";
 
 export const useFetch = (url) => {
   const [loading, setLoading] = useState(false);
@@ -8,13 +9,17 @@ export const useFetch = (url) => {
   const getData = async () => {
     setLoading(true);
     try {
-      const response = await fetch(url);
-      const newData = await response.json();
+      const response = await axios(url, {
+        headers: {
+          Accept: "application/json",
+          "X-ACCESS-KEY": process.env.REACT_APP_PROJECTS_X_ACCESS_KEY,
+        },
+      });
+      const newData = response.data.record;
       setData(newData);
       setLoading(false);
-    } catch (e) {
-      setLoading(false);
-      throw new Error(e);
+    } catch (error) {
+      console.log(error);
     }
   };
 
