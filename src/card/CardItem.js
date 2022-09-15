@@ -11,6 +11,7 @@ import { IoLogoCss3 } from "react-icons/io";
 import { IoLogoHtml5 } from "react-icons/io";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiReact } from "react-icons/si";
+import { SiRedux } from "react-icons/si";
 import { FaNodeJs } from "react-icons/fa";
 import { DiMongodb } from "react-icons/di";
 import { GrMysql } from "react-icons/gr";
@@ -44,6 +45,9 @@ function CardItem({ dataSorted }) {
                 break;
               case "reactjs":
                 symbols.push(<SiReact />);
+                break;
+              case "redux":
+                symbols.push(<SiRedux />);
                 break;
               case "nodejs":
                 symbols.push(<FaNodeJs />);
