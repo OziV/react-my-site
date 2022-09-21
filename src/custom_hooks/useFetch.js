@@ -2,34 +2,29 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 export const useFetch = (url) => {
-  const [loading, setLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
   const [dataSorted, setDataSorted] = useState([]);
 
   const getData = async () => {
-    setLoading(true);
+    setIsLoading(true);
     try {
-      const response = await axios(url, {
-        headers: {
-          Accept: "application/json",
-          "X-ACCESS-KEY": process.env.REACT_APP_PROJECTS_X_ACCESS_KEY,
-        },
-      });
-      const newData = response.data.record;
+      const response = await axios.get(url);
+      const newData = await response.data;
       setData(newData);
-      setLoading(false);
+      setIsLoading(false);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const dataShuffle = () => {
-    setLoading(true);
-    const randomSort = [...data].sort((a, b) => 0.5 - Math.random());
-    setDataSorted(randomSort);
-    setLoading(false);
-    return;
-  };
+  // const dataShuffle = () => {
+  //   setLoading(true);
+  //   const randomSort = [...data].sort((a, b) => 0.5 - Math.random());
+  //   setDataSorted(randomSort);
+  //   setLoading(false);
+  //   return;
+  // };
 
   // const dataSortByRating = () => {
   //   data.sort((a, b) => {
@@ -39,13 +34,13 @@ export const useFetch = (url) => {
   //   return;
   // };
 
-  useEffect(() => {
-    dataShuffle();
-  }, [data]);
+  // useEffect(() => {
+  //   dataShuffle();
+  // }, [data]);
 
   useEffect(() => {
     getData();
   }, [url]);
 
-  return { loading, data, dataSorted };
+  return { isLoading, data, dataSorted };
 };

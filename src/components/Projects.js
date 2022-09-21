@@ -7,7 +7,7 @@ import Loader from "../misc/Loader";
 import { GrProjects } from "react-icons/gr";
 
 function Projects() {
-  const { dataSorted, loading } = useFetch(process.env.REACT_APP_PROJECTS_URL);
+  const { data, loading } = useFetch(process.env.REACT_APP_PROJECTS_URL);
   const { title } = useTitle(text_title[2].name);
 
   const GetIcon = () => {
@@ -22,7 +22,7 @@ function Projects() {
     if (loading) {
       return <Loader />;
     } else {
-      return <CardItem dataSorted={dataSorted} />;
+      return <CardItem dataSorted={data} />;
     }
   };
 

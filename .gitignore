@@ -11,8 +11,8 @@
 # production
 /build
 
-# file
-DataList.js
+# folders
+/data
 
 # misc
 .DS_Store
