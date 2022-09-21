@@ -14,29 +14,31 @@ function Profile() {
     const text_searching = text_data[2].info;
 
     return (
-      <p>
-        <div className="section-center">
-          <span className="align-start">
-            <span className="font-large">
-              {text_i}{" "}
-              <span className="icon-background">{`${firstName} ${lastName}`}</span>
+      <div>
+        <p>
+          <div className="section-center">
+            <span className="align-start">
+              <span className="font-large">
+                {text_i}{" "}
+                <span className="icon-background">{`${firstName} ${lastName}`}</span>
+              </span>
+              <br />
+              <span className="font-medium">{text_fs}</span>
+              <br />
+              <span className="font-small">{text_searching}</span>
+              <br />
             </span>
-            <br />
-            <span className="font-medium">{text_fs}</span>
-            <br />
-            <span className="font-small">{text_searching}</span>
-            <br />
-          </span>
-          <span className="icon-large-left">
-            <MdOutlineLaptopChromebook />
-          </span>
-        </div>
-      </p>
+            <span className="icon-large-left">
+              <MdOutlineLaptopChromebook />
+            </span>
+          </div>
+        </p>
+      </div>
     );
   };
 
   return (
-    <section className="section section-top section-fix">
+    <section className="section section-fix background-white">
       {title}
       <GetText />
     </section>

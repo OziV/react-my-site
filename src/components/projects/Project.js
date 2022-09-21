@@ -2,10 +2,10 @@ import React from "react";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import { CardActionArea, CardActions } from "@mui/material";
+import { CardActionArea, CardActions, ButtonBase } from "@mui/material";
 
-import { BsGithub } from "react-icons/bs";
-import { TbWorld } from "react-icons/tb";
+import { FaGithubSquare } from "react-icons/fa";
+import { VscLinkExternal } from "react-icons/vsc";
 
 import { IoLogoCss3 } from "react-icons/io";
 import { IoLogoHtml5 } from "react-icons/io";
@@ -25,7 +25,6 @@ import { SiBootstrap } from "react-icons/si";
 import { SiMaterialui } from "react-icons/si";
 
 function Project(project) {
-  console.log(project);
   const {
     name,
     created_at,
@@ -82,7 +81,7 @@ function Project(project) {
       case "bootstrap":
         symbols.push(<SiBootstrap />);
         break;
-      case "material_ui":
+      case "mui":
         symbols.push(<SiMaterialui />);
         break;
       default:
@@ -92,33 +91,6 @@ function Project(project) {
   };
 
   return (
-    // <a href={homepage} target="_blank" class="card">
-    //   <img src={imageURL} alt={name} className="card-image" />
-    //   <div className="symbols-container">
-    //     {topics.map((topic) => {
-    //       return <div className="symbol">{checkSymbol(topic)}</div>;
-    //     })}
-    //   </div>
-    //   <div className="card-info-section">
-    //     <section className="card-info">
-    //       <h5>
-    //         {homepage
-    //           ? homepage.substr(13, homepage.indexOf(".") - 13)
-    //           : "No Hompage"}
-    //       </h5>
-    //       <p>{description}</p>
-    //     </section>
-    //     <section className="card-btns-container">
-    //       <a href={homepage}>
-    //         <TbWorld className="card-icon-btn" />
-    //       </a>
-    //       <a href={html_url}>
-    //         <BsGithub className="card-icon-btn" />
-    //       </a>
-    //     </section>
-    //   </div>
-    // </a>
-
     <Card className="card-size">
       <CardActionArea>
         <CardMedia
@@ -128,9 +100,9 @@ function Project(project) {
           alt={name}
         ></CardMedia>
         <CardContent className="align-start">
-          <div className="symbols">
+          <div className="symbols-container">
             {topics.map((topic) => {
-              return checkSymbol(topic);
+              return <div className="symbols">{checkSymbol(topic)}</div>;
             })}
           </div>
           <div variant="h5" className="font-color-black card-title">
@@ -144,11 +116,11 @@ function Project(project) {
         </CardContent>
       </CardActionArea>
       <CardActions className="card-btns">
-        <a href={homepage} target="_blank" className="card-btn">
-          <TbWorld className="card-icon-btn" />
-        </a>
         <a href={html_url} target="_blank" className="card-btn">
-          <BsGithub className="card-icon-btn" />
+          <FaGithubSquare className="card-icon-btn" />
+        </a>
+        <a href={homepage} target="_blank" className="card-btn">
+          <VscLinkExternal className="card-icon-btn" />
         </a>
       </CardActions>
     </Card>

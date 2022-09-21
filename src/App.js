@@ -8,11 +8,7 @@ function App() {
 
   document.title = `${firstName} ${lastName}`;
 
-  return (
-    <>
-      <Home />
-    </>
-  );
+  return <Home />;
 }
 
 export default App;

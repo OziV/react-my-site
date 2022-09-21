@@ -20,7 +20,7 @@ function Header() {
     );
   };
   return (
-    <div className="header">
+    <div className="header background-white">
       <GetSymbolsLinks />
     </div>
   );

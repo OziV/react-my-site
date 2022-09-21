@@ -1,13 +1,14 @@
-import React from "react";
+import React, { useEffect, useContext, useState } from "react";
+import { AppContext } from "../context/AppContext";
 import { useTitle } from "../custom_hooks/useTitle";
-import { useFetch } from "../custom_hooks/useFetch";
 import { text_title } from "../data/dataText";
-import CardItem from "../card/CardItem";
 import Loader from "../misc/Loader";
+import ProjectsContainer from "./projects/ProjectsContainer";
 import { GrProjects } from "react-icons/gr";
 
 function Projects() {
-  const { data, loading } = useFetch(process.env.REACT_APP_PROJECTS_URL);
+  const { isLoading, projectsBasic, projectsBasicSorted } =
+    useContext(AppContext);
   const { title } = useTitle(text_title[2].name);
 
   const GetIcon = () => {
@@ -19,10 +20,10 @@ function Projects() {
   };
 
   const GetData = () => {
-    if (loading) {
+    if (isLoading) {
       return <Loader />;
     } else {
-      return <CardItem dataSorted={data} />;
+      return <ProjectsContainer projectsList={projectsBasic} />;
     }
   };
 

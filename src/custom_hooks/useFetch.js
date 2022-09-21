@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 
-export const useFetch = (url) => {
+export const useFetch = (url = "/db/repos.json") => {
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
   const [dataSorted, setDataSorted] = useState([]);
+  const [projectsTop, setProjectsTop] = useState([]);
+  const [projectsBasic, setProjectsBasic] = useState([]);
+  const [projectsBasicSorted, setProjectsBasicSorted] = useState();
 
   const getData = async () => {
     setIsLoading(true);
@@ -17,6 +20,24 @@ export const useFetch = (url) => {
       console.log(error);
     }
   };
+
+  const dataSortByRating = () => {
+    for (let project of data) {
+      if (project.open_issues_count >= 2) {
+        setProjectsTop((projectsTop) => [...projectsTop, project]);
+      } else {
+        setProjectsBasic((projectsBasic) => [...projectsBasic, project]);
+      }
+    }
+    return;
+  };
+
+  useEffect(() => {
+    let newList = projectsBasic.sort(function (a, b) {
+      return new Date(b.created_at) - new Date(a.created_at);
+    });
+    setProjectsBasicSorted(newList);
+  }, [projectsBasic]);
 
   // const dataShuffle = () => {
   //   setLoading(true);
@@ -34,13 +55,13 @@ export const useFetch = (url) => {
   //   return;
   // };
 
-  // useEffect(() => {
-  //   dataShuffle();
-  // }, [data]);
+  useEffect(() => {
+    dataSortByRating();
+  }, [data]);
 
   useEffect(() => {
     getData();
   }, [url]);
 
-  return { isLoading, data, dataSorted };
+  return { isLoading, projectsTop, projectsBasic, projectsBasicSorted };
 };

@@ -11,7 +11,7 @@ function Home() {
       <Header />
       <Profile />
       <ProjectsTop />
-      {/* <Projects /> */}
+      <Projects />
       <Footer />
     </section>
   );
