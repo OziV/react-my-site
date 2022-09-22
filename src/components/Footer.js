@@ -31,7 +31,7 @@ function Footer() {
         {text_contact_buttons.map((item, index) => {
           const { id, name, link, icon } = item;
           return (
-            <div className="align-start contact-buttons-margin" key={uuid()}>
+            <div className="align-start contact-buttons-margin" key={id}>
               <div className="icon-small-center">{icon}</div>
               <a href={link} target="_blank" className="footer-links-fix">
                 {name}
@@ -44,7 +44,7 @@ function Footer() {
   };
 
   return (
-    <section className="section-footer">
+    <section className="section-footer background-footer">
       <ContactMe />
       <GetIcon />
       <GetContactData />

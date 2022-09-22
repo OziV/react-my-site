@@ -43,46 +43,46 @@ function Project(project) {
     const symbols = [];
     switch (topic) {
       case "javascript":
-        symbols.push(<IoLogoJavascript />);
+        symbols.push(<IoLogoJavascript color="#F7E018" />);
         break;
       case "react":
-        symbols.push(<SiReact />);
+        symbols.push(<SiReact color="#61DBFB" />);
         break;
       case "redux":
-        symbols.push(<SiRedux />);
+        symbols.push(<SiRedux color="#7649BB" />);
         break;
       case "nodejs":
-        symbols.push(<FaNodeJs />);
+        symbols.push(<FaNodeJs color="#90C53F" />);
         break;
       case "mongodb":
-        symbols.push(<DiMongodb />);
+        symbols.push(<DiMongodb color="#12924F" />);
         break;
       case "sql":
-        symbols.push(<GrMysql />);
+        symbols.push(<GrMysql color="#FEB300" />);
         break;
       case "firebase":
-        symbols.push(<SiFirebase />);
-        break;
-      case "angular":
-        symbols.push(<IoLogoAngular />);
-        break;
-      case "python":
-        symbols.push(<IoLogoPython />);
-        break;
-      case "java":
-        symbols.push(<FaJava />);
-        break;
-      case "vue_js":
-        symbols.push(<FaVuejs />);
-        break;
-      case "google_analytics":
-        symbols.push(<TbBrandGoogleAnalytics />);
-        break;
-      case "bootstrap":
-        symbols.push(<SiBootstrap />);
+        symbols.push(<SiFirebase color="#F5820B" />);
         break;
       case "mui":
-        symbols.push(<SiMaterialui />);
+        symbols.push(<SiMaterialui color="#007FFF" />);
+        break;
+      case "angular":
+        symbols.push(<IoLogoAngular color="#DD0031" />);
+        break;
+      case "python":
+        symbols.push(<IoLogoPython color="#3671A3" />);
+        break;
+      case "java":
+        symbols.push(<FaJava color="#5283A2" />);
+        break;
+      case "vue_js":
+        symbols.push(<FaVuejs color="#3FB984" />);
+        break;
+      case "google_analytics":
+        symbols.push(<TbBrandGoogleAnalytics color="#FFC517" />);
+        break;
+      case "bootstrap":
+        symbols.push(<SiBootstrap color="#7511F1" />);
         break;
       default:
         symbols.push("");
@@ -92,7 +92,7 @@ function Project(project) {
 
   return (
     <Card className="card-size">
-      <CardActionArea>
+      <CardActionArea href={homepage} className="card-action-area">
         <CardMedia
           className="card-media"
           component="img"

@@ -18,8 +18,8 @@ const ProjectsTop = () => {
   };
 
   return (
-    <section className="section">
-      {title}
+    <section className="section background-projects-top">
+      <div className="title">{title}</div>
       <GetData />
     </section>
   );

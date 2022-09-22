@@ -13,7 +13,7 @@ function Projects() {
 
   const GetIcon = () => {
     return (
-      <span className="icon-large-center">
+      <span className="icon-large-center icon-margin-bottom">
         <GrProjects className="icon-background" />
       </span>
     );
@@ -28,8 +28,8 @@ function Projects() {
   };
 
   return (
-    <section className="section">
-      {title}
+    <section className="section background-projects">
+      <div className="title">{title}</div>
       <GetData />
       <GetIcon />
     </section>
