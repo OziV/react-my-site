@@ -7,8 +7,8 @@ import { CardActionArea, CardActions, ButtonBase } from "@mui/material";
 import { FaGithubSquare } from "react-icons/fa";
 import { VscLinkExternal } from "react-icons/vsc";
 
-import { IoLogoCss3 } from "react-icons/io";
 import { IoLogoHtml5 } from "react-icons/io";
+import { IoLogoCss3 } from "react-icons/io";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiReact } from "react-icons/si";
 import { SiRedux } from "react-icons/si";
@@ -23,6 +23,7 @@ import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { FaVuejs } from "react-icons/fa";
 import { SiBootstrap } from "react-icons/si";
 import { SiMaterialui } from "react-icons/si";
+import { SiStyledcomponents } from "react-icons/si";
 
 function Project(project) {
   const {
@@ -42,6 +43,12 @@ function Project(project) {
   const checkSymbol = (topic) => {
     const symbols = [];
     switch (topic) {
+      case "css":
+        symbols.push(<IoLogoCss3 color="#264DE4" />);
+        break;
+      case "html":
+        symbols.push(<IoLogoHtml5 color="#DD4B25" />);
+        break;
       case "javascript":
         symbols.push(<IoLogoJavascript color="#F7E018" />);
         break;
@@ -84,6 +91,9 @@ function Project(project) {
       case "bootstrap":
         symbols.push(<SiBootstrap color="#7511F1" />);
         break;
+      case "styled-components":
+        symbols.push(<SiStyledcomponents color="#D874B1" />);
+        break;
       default:
         symbols.push("");
     }
@@ -106,9 +116,10 @@ function Project(project) {
             })}
           </div>
           <div variant="h5" className="font-color-black card-title">
-            {homepage.includes("oziv.")
+            {name.includes("react") ? name.substring(6) : name}
+            {/* {homepage.includes("oziv.")
               ? "my portfolio "
-              : homepage.substr(13, homepage.indexOf(".") - 13)}
+              : homepage.substr(13, homepage.indexOf(".") - 13)} */}
           </div>
           <div variant="body1" className="font-color-black card-info">
             {description}
