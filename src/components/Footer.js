@@ -27,7 +27,7 @@ function Footer() {
 
   const GetContactData = () => {
     return (
-      <section className="section-row">
+      <section className="section-row" id="font-contact-me">
         {text_contact_buttons.map((item, index) => {
           const { id, name, link, icon } = item;
           return (

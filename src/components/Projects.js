@@ -28,7 +28,7 @@ function Projects() {
   };
 
   return (
-    <section className="section background-projects">
+    <section className="section background-projects" id="font-projects">
       <div className="title">{title}</div>
       <GetData />
       <GetIcon />

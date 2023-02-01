@@ -5,7 +5,7 @@ import { text_header_buttons } from "../data/dataText";
 function Header() {
   const GetSymbolsLinks = () => {
     return (
-      <section className="header-container">
+      <section className="header-container" id="font-me">
         {text_header_buttons.map((item, index) => {
           const { id, link, icon } = item;
           if (id !== 1) {

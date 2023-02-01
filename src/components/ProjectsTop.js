@@ -18,7 +18,7 @@ const ProjectsTop = () => {
   };
 
   return (
-    <section className="section background-projects-top">
+    <section className="section background-projects-top" id="font-top-projects">
       <div className="title">{title}</div>
       <GetData />
     </section>

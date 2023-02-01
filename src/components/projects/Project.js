@@ -91,9 +91,9 @@ function Project(project) {
       case "bootstrap":
         symbols.push(<SiBootstrap color="#7511F1" />);
         break;
-      case "styled-components":
-        symbols.push(<SiStyledcomponents color="#D874B1" />);
-        break;
+      // case "styled-components":
+      //   symbols.push(<SiStyledcomponents color="#D874B1" />);
+      //   break;
       default:
         symbols.push("");
     }

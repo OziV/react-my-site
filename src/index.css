@@ -148,7 +148,9 @@ a:active {
 
 .section-row {
   width: 90vw;
-  margin: 3rem auto;
+  margin-left: 2.3rem;
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -190,6 +192,7 @@ a:active {
 
 .font-x-small {
   font-size: 20px;
+  margin-bottom: 15px;
 }
 
 .font-small {
@@ -233,7 +236,7 @@ a:active {
 }
 
 .contact-buttons-margin {
-  margin: 0 10px 0 10px;
+  margin: 0 30px 0 30px;
 }
 
 .cards-container {
@@ -322,6 +325,43 @@ a:active {
   margin-bottom: 1rem;
 }
 
+.sticky {
+  z-index: 1;
+  position: absolute;
+  width: 50px;
+  height: 550px;
+  top: 200px;
+  right: 5px;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.sidebar-li {
+  margin-bottom: 10px;
+}
+
+a.font-sidebar {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  list-style: none;
+}
+/* a:visited,
+a:hover,
+a:active  */
+
+a.font-sidebar:hover {
+  color: rgb(128, 0, 0);
+  text-decoration: none;
+  box-shadow: none;
+}
+
 /* =============== */
 /* medium screen */
 /* =============== */
@@ -350,20 +390,32 @@ a:active {
     margin-bottom: 0.75rem;
   }
 
+  .sticky {
+    width: 35px;
+    height: 550px;
+    top: 250px;
+    right: 5px;
+  }
+
+  .section-row {
+    margin-left: 1rem;
+  }
+
   .icon-small-center {
     font-size: 25px;
   }
 
   .font-x-small {
     font-size: 10px;
+    margin-bottom: 15px;
   }
 
   .font-small {
-    font-size: 20px;
+    font-size: 15px;
   }
 
   .font-medium {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .font-large {

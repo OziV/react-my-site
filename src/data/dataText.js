@@ -8,12 +8,12 @@ import { BsGithub } from "react-icons/bs";
 import { AiFillPhone } from "react-icons/ai";
 
 export const text_header_buttons = [
-  {
-    id: 1,
-    name: "CV",
-    link: process.env.REACT_APP_CV_LINK,
-    icon: <BsFillFileEarmarkPersonFill />,
-  },
+  // {
+  //   id: 1,
+  //   name: "CV",
+  //   link: process.env.REACT_APP_CV_LINK,
+  //   icon: <BsFillFileEarmarkPersonFill />,
+  // },
   {
     id: 2,
     name: "LinkedIn",
@@ -29,12 +29,12 @@ export const text_header_buttons = [
 ];
 
 export const text_contact_buttons = [
-  {
-    id: 1,
-    name: "Email",
-    link: `mailto: ${process.env.REACT_APP_MAIL}`,
-    icon: <MdEmail />,
-  },
+  // {
+  //   id: 1,
+  //   name: "Email",
+  //   link: `mailto: ${process.env.REACT_APP_MAIL}`,
+  //   icon: <MdEmail />,
+  // },
   {
     id: 2,
     name: "LinkedIn",
@@ -47,12 +47,12 @@ export const text_contact_buttons = [
     link: process.env.REACT_APP_GITHUB_LINK,
     icon: <BsGithub />,
   },
-  {
-    id: 4,
-    name: "Tel",
-    link: `tel:${process.env.REACT_APP_TEL}`,
-    icon: <AiFillPhone />,
-  },
+  // {
+  //   id: 4,
+  //   name: "Tel",
+  //   link: `tel:${process.env.REACT_APP_TEL}`,
+  //   icon: <AiFillPhone />,
+  // },
 ];
 
 export const text_personal = [
