@@ -18,6 +18,7 @@ import { GrMysql } from "react-icons/gr";
 import { IoLogoAngular } from "react-icons/io";
 import { IoLogoPython } from "react-icons/io";
 import { FaJava } from "react-icons/fa";
+import { SiExpress } from "react-icons/si";
 import { SiFirebase } from "react-icons/si";
 import { TbBrandGoogleAnalytics } from "react-icons/tb";
 import { FaVuejs } from "react-icons/fa";
@@ -61,10 +62,16 @@ function Project(project) {
       case "nodejs":
         symbols.push(<FaNodeJs color="#90C53F" />);
         break;
+      case "expressjs":
+        symbols.push(<SiExpress color="#000000" />);
+        break;
       case "mongodb":
         symbols.push(<DiMongodb color="#12924F" />);
         break;
       case "sql":
+        symbols.push(<GrMysql color="#FEB300" />);
+        break;
+      case "mysql":
         symbols.push(<GrMysql color="#FEB300" />);
         break;
       case "firebase":
